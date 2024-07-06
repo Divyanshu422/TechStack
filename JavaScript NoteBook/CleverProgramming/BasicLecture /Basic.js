@@ -1,11 +1,10 @@
-
-
-
-// 2. Operators: used to assign/compare values, perform arithmetic operation
-/*
-    * 3. Prompt(): is a built in javaScript functionality that help 
-    *              developer to get the input from a user throgh browser
+/* 
+    * Printing on the window for i/p taking -> prompt and printing the 
+    * result on the window using alert
 */
+food = prompt('what is cost of the food in dollars');
+tipPercentage = prompt('percentage of Tip')/100;
+tipAmount = food * tipPercentage;
 
-fruit = prompt('what is your favourite food')
-console.log(fruit);
+console.log('the tipAmount is ', tipAmount);
+alert(tipAmount);
