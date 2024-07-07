@@ -1,35 +1,24 @@
 /*
-    Function:
-    1. Functions are objects in JavaScript and have properties and methods
-    2. Functions are first-class citizens in JavaScript - they can be 
-       assigned to variables, passed as arguments, and returned from other 
-       functions
-    3. 
-
+    * Arrays
 */
 
-    function greeting (name){
-        console.log('hi ', name,', Nice to meet to you');
-        console.log('hi ' + name + ', Nice to meet to you');
+    const groceries = ['apple', 'banana'];
+    groceries.push('Mango');
+    // console.log(groceries);     //! [ 'apple', 'banana', 'Mango' ]
 
-        // Using Template Literals:
+/*
+    * Slice method:
+    * The slice() method is used in both JavaScript arrays and strings to extract a portion 
+    * of the original array or string and return it as a new array or string, without 
+    * modifying the original.
+    * the slice method takes 2 parameter -> start and end. end is not included in the returned
+    * string or array but start is included
+*/
 
-        console.log(`hi ${name}, Nice to meet to you`);
-    }
+    const array = [10, 20, 30, 40, 50, 60, 70];
+    const slicedArray = array.slice(2, 5);
+    console.log(slicedArray);   // [ 30, 40, 50 ]
 
-    //  Invoking the function:
-    greeting('Divyanshu');
-
-
-    /*
-        * A function which is named as sum
-        * take 2 argument
-        * does: return the addition of the 2 number. 
-        * the return keyword/statement stops the execution of a function and return a value.
-    */
-
-    function sum (a , b){
-        return (a+b)
-    }
-
-    console.log(sum(10, 20));
+    console.log(array.length);   // 7 
+    console.log(array.indexOf(44));     // - 1 => means not present 
+    console.log(array.indexOf(40));     // 3
