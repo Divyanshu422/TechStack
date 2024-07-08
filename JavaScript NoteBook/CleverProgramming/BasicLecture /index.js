@@ -1,52 +1,84 @@
+
 /*
-    * objects: are a type of variable, quite similar to array but they have key-value pair.
-    * object are created using the squigglies bracket.
-    * the properties of object can be accessed using the dot and bracket notation
+    * Creating the letter counter: 
+    * Short trick: In javaScript there is a method called length => which gives the total 
+    * letter in the string. so no need to use this code.
 */
 
-    const person = {
-        name: 'leonardo',
-        shirt: 'white'
+    const howManyLetter = (inputString) => {
+            // Using the for..of loop not the for..in loop
+            let count = 0; 
+            //* console.log(inputString.length); // 26
+            for (let letter of inputString){
+                count++;
+            }
+            return {count}; //* by using the bracket we are returning the obhect
     }
 
-    // console.log(person);    //! { name: 'leonardo', shirt: 'white' }
-    // console.log(person.name);   //! leonardo
 
-    //* Using bracket  notation
-    // console.log(person['shirt']);       //* white
+    //console.log(howManyLetter('Hi! I am new to JavaScript'))        //! { count: 26 }
 
-    // Assign the value to the object:
-    person.phoneNumber = '1-22-333-4444';   // Addint the key value to the object
-    // console.log(person['phoneNumber'])  //1-22-333-4444
+    //* Prompting the user for the input
+    // const input = prompt('Write the string');
+    // console.log(howManyLetter(input));
 
 
-
-
+// ---------**************------------**************---------------****************-----------
     /*
-        Creating a fucntion with 2 param and using the object to store the value
-        of param. Using the template literals for accessing the property and log
-        the result
+        * Printing the sum of the array element: using for..of loop
     */
 
-        function introduce (name, shirt, assets, liability){
-            const person = {
-                name : name,
-                shirt : shirt,
-                assets : assets,
-                liability: liability,
-                networth: function(){
-                    return this.assets - this.liability
-                }
-            }
-            const intro = `Hi, my name is ${person.name} and my shirt color is ${person['shirt']} and my net worth is ${person.networth()}`
-            return intro;
+    const sumArray = (array) =>{
+        let sum = 0;
+        for (let element of array){
+            sum += element;
         }
+        return {sum};
+    }
 
-        // invoking the function
-
-        console.log(introduce('Divyanshu', 'red', 10000, 5000));
-
+    let array = [10,20,30,40,50,60];
+    // console.log(sumArray(array));           //* { sum: 210 }
 
 
-        
-        // console.log(introduce('Leonardo', 'white'));
+// ---------**************------------**************---------------****************-----------
+    /*
+        * Printing the maximum of the array element: using for..of loop
+    */
+
+    const maxArray = (array) => {
+        let max = array[0];
+        for (let element of array){
+            if (element > max){
+                max = element;
+            }
+        }
+        return {max};
+    }
+
+    // console.log(maxArray([10, 7, 88, 90, 14, 55]));     //! { max: 90 }
+
+// --------**************------------**************---------------****************-----------
+/*
+        * Returing the frequency: for example =>
+        *  let the input be 'hahha' 
+        * Then it shall return an object  => {'h':3, 'a': 2}
+*/
+    
+        const letterFrequency = (phrase) => {
+                // Frequency object
+                const frequency = {}
+                // Looping the each letter of string 
+                for (const letter of phrase){
+                    // Checking if the letter is already in the object frequency
+                    if (letter in frequency){
+                        frequency[letter] = frequency[letter] + 1;
+                    }
+                    else{
+                        // Adding the property-value to the object 
+                        frequency[letter] = 1;
+                    }
+                }
+
+                return {frequency};
+        }
+        console.log(letterFrequency('hahha'))           //*  { frequency: { h: 3, a: 2 } }
