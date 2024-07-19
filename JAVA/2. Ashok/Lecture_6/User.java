@@ -12,8 +12,16 @@
  */
 
 /*
- * Note: there are 2 variable:
- * method variable
- * field variable
+        * Note: there are 2 variable:
+        *               1. method variable
+        *               2. field variable
  */
 
+// class Program {
+
+//     public static void main(String[] args) {
+//         int a = 5;
+//         int b = 10;
+//         (a>b)? System.out.println(a): System.out.println(b);
+//     }
+// }
