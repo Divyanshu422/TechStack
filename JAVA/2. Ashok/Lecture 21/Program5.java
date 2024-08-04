@@ -3,6 +3,7 @@
  */
 
 public class Program5 {
+
     public static void main(String[] args) {
         int[] arr = { 2, 4, 2, 19, 5, 4 };
 
