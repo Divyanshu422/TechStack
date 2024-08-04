@@ -24,5 +24,16 @@ class Program6 {
         arr[2][2] = 90;
 
         System.out.println(Arrays.toString(arr)); // * [[I@7344699f, [I@6b95977, [I@7e9e5f8a] */
+
+        /*
+         * Using the for each loop to print the element of the array.
+         * the each element in the arr => is the subArray. hence data is
+         * present in the subArray
+         */
+        for (int[] subArray : arr) {
+            for (int data : subArray) {
+                System.out.print(data + " ");
+            }
+        }
     }
 }
